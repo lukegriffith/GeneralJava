@@ -13,11 +13,9 @@ public class Main {
 
         System.out.print("Built");
 
-        Node n = t.FindNodeByData(9);
+        Node n = t.RFindNodeByData(9, t.getRoot());
 
         System.out.println(n.getData());
-
-
 
     }
 }

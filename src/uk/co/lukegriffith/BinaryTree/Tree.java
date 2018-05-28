@@ -17,17 +17,23 @@ public class Tree {
             while (!found) {
 
                 if (IntData[i] == currNode.getData()) {
+                    // Tree does not insert duplicates, already exists and ignores.
                     found = true;
                 }
                 if (IntData[i] > currNode.getData() && currNode.getRight() == null) {
+
+                    // Inserting to the right of the current node
                     currNode.setRight(new Node(IntData[i]));
                     found = true;
                 } else if (IntData[i] > currNode.getData()) {
+                    // Searching right for location.
                     currNode = currNode.getRight();
                 } else if (IntData[i] < currNode.getData() && currNode.getLeft() == null) {
+                    // Inserting to the left of the current node.
                     currNode.setLeft(new Node(IntData[i]));
                     found = true;
                 } else if (IntData[i] < currNode.getData()) {
+                    // Searching left for location.
                     currNode = currNode.getLeft();
                 }
 
@@ -37,13 +43,12 @@ public class Tree {
 
     }
     public Node FindNodeByData(int data) {
-
+        // Iterative approach to finding the node.
         boolean found = false;
 
         Node currNode = root;
 
         while (!found) {
-
             if (data == currNode.getData()) {
                 found = true;
             }
@@ -61,4 +66,24 @@ public class Tree {
         return currNode;
     }
 
+    public Node RFindNodeByData(int data, Node n) {
+        // Recursive approach to finding the node.
+        if (data == n.getData()) {
+            return n;
+        }
+        else if (data > n.getData() && n.getRight() != null) {
+            return RFindNodeByData(data, n.getRight());
+        }
+        else if (data < n.getData() && n.getLeft() != null) {
+            return RFindNodeByData(data, n.getLeft());
+        }
+        else {
+            throw new java.lang.Error("Unable to find node.");
+        }
+    }
+
+
+    public Node getRoot() {
+        return this.root;
+    }
 }
