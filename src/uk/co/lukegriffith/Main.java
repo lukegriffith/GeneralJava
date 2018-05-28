@@ -1,6 +1,7 @@
 package uk.co.lukegriffith;
 
 import uk.co.lukegriffith.BinaryTree.Tree;
+import uk.co.lukegriffith.BinaryTree.Node;
 
 public class Main {
 
@@ -11,6 +12,11 @@ public class Main {
         Tree t =  new Tree(a);
 
         System.out.print("Built");
+
+        Node n = t.FindNodeByData(9);
+
+        System.out.println(n.getData());
+
 
 
     }
