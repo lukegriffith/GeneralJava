@@ -7,13 +7,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] a = {5,1,7,3,8,2,8};
+        IntNodeData[] a = {
+                new IntNodeData(5),
+                new IntNodeData(1),
+                new IntNodeData(7),
+                new IntNodeData(4),
+                new IntNodeData(8),
+                new IntNodeData(4)
+        };
 
         Tree t =  new Tree(a);
 
         System.out.print("Built");
 
-        Node n = t.RFindNodeByData(9, t.getRoot());
+        Node n = t.RFindNodeByData(8, t.getRoot());
 
         System.out.println(n.getData());
 

@@ -4,7 +4,7 @@ public class Tree {
 
     private Node root;
 
-    public Tree(int[] IntData) {
+    public Tree(NodeData[] IntData) {
 
         root = new Node(IntData[0]);
 
@@ -16,23 +16,23 @@ public class Tree {
 
             while (!found) {
 
-                if (IntData[i] == currNode.getData()) {
+                if (IntData[i].getIntValue() == currNode.getData()) {
                     // Tree does not insert duplicates, already exists and ignores.
                     found = true;
                 }
-                if (IntData[i] > currNode.getData() && currNode.getRight() == null) {
+                if (IntData[i].getIntValue() > currNode.getData() && currNode.getRight() == null) {
 
                     // Inserting to the right of the current node
                     currNode.setRight(new Node(IntData[i]));
                     found = true;
-                } else if (IntData[i] > currNode.getData()) {
+                } else if (IntData[i].getIntValue() > currNode.getData()) {
                     // Searching right for location.
                     currNode = currNode.getRight();
-                } else if (IntData[i] < currNode.getData() && currNode.getLeft() == null) {
+                } else if (IntData[i].getIntValue() < currNode.getData() && currNode.getLeft() == null) {
                     // Inserting to the left of the current node.
                     currNode.setLeft(new Node(IntData[i]));
                     found = true;
-                } else if (IntData[i] < currNode.getData()) {
+                } else if (IntData[i].getIntValue() < currNode.getData()) {
                     // Searching left for location.
                     currNode = currNode.getLeft();
                 }

@@ -5,11 +5,14 @@ public class Node {
     private Node left;
     private Node right;
 
-    private int data;
+    private NodeData data;
 
+    public NodeData getNodeData() {
+        return data;
+    }
 
     public int getData(){
-        return data;
+        return data.getIntValue();
     }
 
     public Node getLeft(){
@@ -28,12 +31,12 @@ public class Node {
         this.right = right;
     }
 
-    public void setData(int data) {
+    public void setData(NodeData data) {
         this.data = data;
     }
 
 
-    public Node(int data) {
+    public Node(NodeData data) {
         this.data = data;
     }
 }
