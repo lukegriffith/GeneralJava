@@ -1,6 +1,8 @@
 package uk.co.lukegriffith.BinaryTree;
 
-public class Node {
+import uk.co.lukegriffith.BinaryTree.TreePrinter.PrintableNode;
+
+public class Node implements PrintableNode {
 
     private Node left;
     private Node right;
@@ -13,6 +15,12 @@ public class Node {
 
     public int getData(){
         return data.getIntValue();
+    }
+
+
+    public String getText() {
+        //return Integer.toString(data.getIntValue());
+        return data.getStringValue();
     }
 
     public Node getLeft(){

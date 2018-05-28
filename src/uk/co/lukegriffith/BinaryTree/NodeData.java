@@ -4,5 +4,6 @@ public interface NodeData {
 
 
     int getIntValue();
+    String getStringValue();
 
 }
